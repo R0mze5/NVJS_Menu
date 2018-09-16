@@ -117,7 +117,7 @@ let menu = new NVJSMenu('.header',{
 
 # Changelog
 
-Changelog is available on [Changelog documentation](documentation/cangelog.md).
+Changelog is available on [Changelog documentation](documentation/changelog.md).
 
 
 # License
