@@ -1,0 +1,39 @@
+:root{
+	--header_height: 70px;
+	@media @tablet_landscape{
+		--header_height: 95px;
+	}
+	@media @large{
+        --header_height: 130px;
+	}
+}
+
+
+.header{
+	--header_height: 70px;
+	--background-color: var(--blue_color);
+	--header_padding-width: 5.9%;
+
+	--text_color: #ffffff;
+
+	@media @tablet{
+		--header_padding-width: 37px;
+	}
+	
+	--header_width_logo: fit-content;
+	--header_height_logo: 27px;
+	--header_margin-right_logo: 30px;
+
+	@media @tablet_landscape{
+		--header_margin-right_logo: 60px;
+	}
+
+	&__menu__item{
+		margin-bottom: 20px;
+
+		@media @tablet_landscape{
+			margin-bottom: 0;
+		}
+	}
+}
+

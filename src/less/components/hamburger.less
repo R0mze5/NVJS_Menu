@@ -1,0 +1,82 @@
+// .hamburger>.hamburger__item
+
+.hamburger{
+    --hamburger-padding: 4px;
+    --hamburger-item_width: 26px;
+    --hamburger-item_height: 2px;
+    --hamburger-item_space: 5px;
+    --background-color__item: #fff;
+    --hamburger_open__item_color: #fff;
+
+    --hamburger_width: calc(~'var(--hamburger-item_width) + var(--hamburger-padding) * 2');
+    --hamburger_height: calc(~'var(--hamburger-item_height) * 3 + var(--hamburger-item_space) * 3 + var(--hamburger-padding) * 2');
+
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    width: var(--hamburger_width);
+    height: var(--hamburger_height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--hamburger-padding);
+    border-radius: 5px;
+    position: relative;
+    z-index: 3;
+
+    @media @switch{
+        display: none;
+    }
+
+    &__item{
+        width: var(--hamburger-item_width);
+        height: var(--hamburger-item_height);
+        background-color: var(--background-color__item);
+
+        &::before,
+        &::after{
+            display: block;
+            content: '';
+            width: var(--hamburger-item_width);
+            height: var(--hamburger-item_height);
+            background-color: var(--background-color__item);
+            position: relative;
+            transition: transform 250ms ease-in-out 0ms, margin 250ms ease-in-out 250ms, background-color 250ms ease-in-out 250ms;
+            transform: rotate(0deg);
+        }
+
+        &::before{
+            margin-top: calc(~'(var(--hamburger-item_height) * 1.5 + var(--hamburger-item_space)) * -1 ');
+            // margin-top: -8px;
+            // margin-left: -6px;
+        }
+
+        &::after{
+            margin-top: calc(~'var(--hamburger-item_height) * 2 + var(--hamburger-item_space) * 2');
+            // margin-left: -6px;
+        }
+    }
+
+    &.open{
+        & .hamburger__item{
+            background-color: transparent;
+
+            &::before,
+            &::after{
+                transition: margin 250ms ease-in-out 0ms, background-color 250ms ease-in-out 250ms, transform 250ms ease-in-out 250ms;
+                background-color: var(--hamburger_open__item_color);
+            }
+
+            &::before{
+                transform: rotate(-45deg);
+                margin-top: 0px;
+                
+            }
+            &::after{
+                transform: rotate(45deg);
+                margin-top: -2px;
+
+            }
+        }
+    }
+}
