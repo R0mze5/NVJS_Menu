@@ -11,6 +11,8 @@ NVJS_Menu - is the free and responsive menu script, which used for creating open
 
 NVJS_Menu is not compatible with all platforms, because it used ES6. it is a modern menu which is focused only on modern apps/platforms to bring the best experience and simplicity.
 
+## [Example on Codepen](https://codepen.io/r0mzes/pen/aRNbNX)
+
 <!-- _Read documentation in other languages:_
 [_Русский_](documentation/README.ru-Ru.md) -->
 
@@ -117,7 +119,7 @@ let menu = new NVJSMenu('.header',{
 
 # Changelog
 
-Changelog is available on [Changelog documentation](documentation/cangelog.md).
+Changelog is available on [Changelog documentation](documentation/changelog.md).
 
 
 # License

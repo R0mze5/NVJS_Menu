@@ -1,6 +1,8 @@
 'use strict';
 
 global.variables = {
-	sourcePath: '/dist/',
-	preprocessor: 'less'
+    isDevFolder: true,
+    sourcePath: '/dist/',
+    preprocessor: 'less',
+    distExtension: 'html'
 };

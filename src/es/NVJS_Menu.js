@@ -89,7 +89,7 @@ function NVJSMenu(config, configAtributes, logErrors) {
 			sensivityLevel: {
 				low : 40,
 				medium : 20,
-				high : 0,
+				hight : 0,
 				default : 20
 			},
 			addClass: true,
@@ -307,6 +307,8 @@ function NVJSMenu(config, configAtributes, logErrors) {
 				let lastyPos;
 				let eventScroll = new Event ('scroll')
 				let sensivity = events.scroll.sensivity;
+
+				let startCheckingScroll = 0; // add to initialize
 				
 				let scrollForward = {
 					scrollToTop: false,
@@ -314,7 +316,7 @@ function NVJSMenu(config, configAtributes, logErrors) {
 				};
 				
 				
-				if(!_isScrolled &&  window.scrollY > 0){
+				if(!_isScrolled &&  window.scrollY > startCheckingScroll){
 					setScrollEvent(true);
 				}
 				
@@ -344,9 +346,9 @@ function NVJSMenu(config, configAtributes, logErrors) {
 				window.addEventListener('scroll', () => {
 					lastyPos = ypos;
 					ypos = window.scrollY;
-					if(ypos == 0){
+					if(ypos <= startCheckingScroll){
 						setScrollEvent(false);
-					} else if(ypos > 0){
+					} else if(ypos > startCheckingScroll){
 						setScrollEvent(true);
 						if(ypos > lastyPos){	
 							let forward = 'scrollToBottom';

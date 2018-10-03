@@ -1,30 +1,66 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
-<title>NVJS_Menu</title>
-<link rel="shortcut icon" href="/dist/images/favicon/favicon.ico">
-<link href="/dist/css/NVJS_Menu.css" rel="stylesheet">
-<link href="/dist/css/common.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+  <title>NVJS_Menu</title>
+  <link rel="shortcut icon" href="/dist/images/favicon/favicon.ico">
+  <link href="./dist/css/NVJS_Menu.css" rel="stylesheet">
+  <link href="./dist/css/main.css" rel="stylesheet">
 </head>
+
 <body>
-<header class="header">
-  <div class="header__wrapper">
-    <div class="header__container"><a class="header__logo" href="/">Logo</a>
-      <nav class="header__menu">
-        <li class="header__menu__item"><a class="header__menu__link" href="/about">About </a></li>
-        <li class="header__menu__item"><a class="header__menu__link" href="">History</a></li>
-        <li class="header__menu__item"><a class="header__menu__link" href="">Contacts</a></li>
-        <li class="header__menu__item"><a class="header__menu__link" href="">Something Else</a></li>
-        <li class="header__menu__item"><a class="header__menu__link" href="">Something Else</a></li>
-      </nav>
-      <div class="hamburger">
-        <div class="hamburger__item"></div>
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="header__container"><a class="header__logo" href="/">Logo</a>
+        <nav class="header__menu">
+          <li class="header__menu__item"><a class="header__menu__link" href="/about">About </a></li>
+          <li class="header__menu__item"><a class="header__menu__link" href="">History</a></li>
+          <li class="header__menu__item"><a class="header__menu__link" href="">Contacts</a></li>
+          <li class="header__menu__item"><a class="header__menu__link" href="">Something Else</a></li>
+          <li class="header__menu__item"><a class="header__menu__link" href="">Something Else</a></li>
+        </nav>
+        <div class="hamburger">
+          <div class="hamburger__item"></div>
+        </div>
       </div>
     </div>
-  </div><script src="/dist/js/NVJS_Menu.js"></script>
-<script src="/dist/js/initial.js"></script>
-</header></body>
+    <script src="./dist/js/NVJS_Menu.js"></script>
+    <script>
+      new NVJSMenu('.header' /*'.header' as default*/,{
+        menuShowButtons: '.hamburger', //'.hamburger' as default, may be Array of buttons
+        menu: '.header__menu', //'.header__menu' as default
+        //options
+        menuOpenClass: 'open', //open as default
+        autoInitialize: true, //true as default
+        lockBody: true, //true as default
+        //constolEvents
+        on: {
+          // ready: true,
+          //initialized: () => {console.log('initialized')},
+          toggle: {
+            elements: ['header', 'menuShowButtons', 'menu', /* ['div'] */], // elements which get active class. Array is selector container, whitch also get activeClass
+            activeClass: 'open', // menuOpenClass value default
+            addClass: true //true as default
+          },
+          scroll: {
+            // sensivity: 'medium', 'low, 'hight; default 20. mean count of pixels to check scroll in 300ms
+            sensivity: 20,
+            activeClass: 'scrolled', //scrolled as default
+            addClass: true //true as default
+          },
+          scrollToTop: {
+            activeClass: 'scrolledToTop', //scrolled as default
+          },
+          scrollToBottom: {
+            activeClass: 'scrolledToBottom', //scrolled as default
+          }
+        }
+      }, true);
+    </script>
+  </header>
+</body>
+
 </html>

@@ -3,10 +3,10 @@
 ## Initialize NVJS_Menu
 
 ``` js
-// initialize swiper:
+// initialize modal:
 new NVJS_Menu()
 
-// initialize swiper with options:
+// initialize modal with options:
 new NVJS_Menu(menuContainer, parameters, logErrors);
 ```
 
@@ -186,10 +186,10 @@ new NVJS_Menu({
 
 
 > **`ready`** \
-> When swiper ready, but not set Events and wait initialization
+> When modal ready, but not set Events and wait initialization
 
 > **`initialize`** \
-> When swiper initialized
+> When modal initialized
 
 > **`open`** \
 > When menu is open

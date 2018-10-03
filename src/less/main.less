@@ -1,32 +1,37 @@
 @import 'core/resolutions.less';
-
-/*---------------------------------------------------------------------------*
- * reset styles
- *---------------------------------------------------------------------------*/
-
 @import 'core/reset.less';
-@import 'core/variables.less';
+
+:root{
+    --dark_color: #202124;
+    --dark_light_color: #5f6368;
+
+    --accent_color: var(--dark_color);
+    --second_color:  #ffffff;
+
+    --header_font: Roboto;
+    --text_font: Roboto;
 
 
-/*---------------------------------------------------------------------------*
- * ./reset styles
- *---------------------------------------------------------------------------*/
+	--header_height: 70px;
+	--background-color: var(--accent_color);
+	--header_padding-width: 5.9%;
 
- /*---------------------------------------------------------------------------*
- * components
- *---------------------------------------------------------------------------*/
+	--text_color: #ffffff;
+	
+	--header_width_logo: fit-content;
+	--header_height_logo: 27px;
+	--header_margin-right_logo: 30px;
 
- /*---------------------------------------------------------------------------*
- * base styles
- *---------------------------------------------------------------------------*/
-
-@import 'base/header.less';
+	@media @tablet{
+		--header_padding-width: 37px;
+    }
+    
+	@media @tablet_landscape{
+		--header_margin-right_logo: 60px;
+	}
+}
 
 body{
     background-color: #e2e2e2;
     min-height: 500vh;
 }
-
-/*---------------------------------------------------------------------------*
- * ./base styles
- *---------------------------------------------------------------------------*/
